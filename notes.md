@@ -275,4 +275,13 @@ On GitHub, a pull request is a way to propose some changes. It's very common to 
 
 Pull requests allow team members to see what changes are being proposed and to discuss them before they are merged into the main codebase.
 
+## gitignore
+if you put ```node_modules``` for example in **.gitignore** then This will ignore every path containing node_modules as a "section" (directory name or file name). It ignores:
 
+node_modules/code.js
+src/node_modules/code.js
+src/node_modules
+It does not ignore:
+
+src/node_modules_2/code.js
+env/node_modules_3
