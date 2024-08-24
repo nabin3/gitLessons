@@ -285,3 +285,36 @@ It does not ignore:
 
 src/node_modules_2/code.js
 env/node_modules_3
+
+### nested gitignore:
+Your .gitignore file does not necessarily need to be at the root of your project.
+
+It's fairly common to have multiple .gitignore files in different directories throughout a project. A nested .gitignore file only applies to the directory it's in and its subdirectories.
+
+### patterns in .gitignore
+It would be rough if .gitignore files only accepted exact filepath section names. Luckily, they don't!
+
+#### wildcards *:
+The * character matches any number of characters except for a slash (/). For example, to ignore all .txt files, you could use the following pattern:
+```bash
+*.txt
+```
+#### Rooted patterns
+Patterns starting with a / are anchored to the directory containing the .gitignore file. For example, this would ignore a main.py in the root directory, but not in any subdirectories:
+```bash
+/main.py
+```
+
+#### Negation:
+You can negate a pattern by prefixing it with an exclamation mark (!). For example, to ignore all .txt files except for important.txt, you could use the following pattern:
+```bash
+*.txt
+!important.txt
+```
+
+#### comments:
+You can add comments to your .gitignore file by starting a line with a #. For example:
+```bash
+# Ignore all .txt files
+*.txt
+```
